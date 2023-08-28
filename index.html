@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="./assets/js/script.js"></script>
+    <title>Informações do Produto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastrar Jogos</h1>
+        <div class="input-container">
+            <label for="tutor">tutor:</label>
+            <input type="text" id="tutor" name="tutor" class="input">
+
+            <label for="petName">Nome do Pet:</label>
+            <input type="text" id="petName" name="petName" class="input">
+
+            <label for="especie">espécie</label>
+            <input type="text" id="especie" name="especie" class="input">
+
+            <label for="imagem">fotinha:</label>
+            <input type="text" id="imgLink" name="imagem" class="input"><br>
+
+            <label for="plataforma">Plataforma:</label>
+            <input type="text" id="plataforma" name="plataforma" class="input"><br>
+
+
+            <div id="msg"></div>
+
+            <button id="criarCard" class="button" onclick="comporJogo()">Adicionar Jogo</button>
+        </div>
+    </div>
+    <h1>Lista de Jogos</h1>
+
+    <div class="container-gameList" class="hidden">
+        <div id="gameList" class="game-list">
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
