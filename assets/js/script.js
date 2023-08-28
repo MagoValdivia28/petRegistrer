@@ -19,3 +19,14 @@ function verificarImputs(){
         evieMsg("cadastro concluido com sucesso", "sucesso")
     }
 }
+
+function envieMsg(msg, tipoMsg){
+    let msgDiv = document.getElementById('msg').value
+    let msgEnviar =  `
+    <p class = "${tipoMsg}">${msg}</p>`;
+    msgDiv.innerHTML = msgEnviar;
+
+    setTimeout(function () {
+        msgDiv.innerHTML = ''
+    }, 4000)
+}
