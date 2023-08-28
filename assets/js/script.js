@@ -30,3 +30,13 @@ function envieMsg(msg, tipoMsg){
         msgDiv.innerHTML = ''
     }, 4000)
 }
+
+class Pet{
+    constructor( tutor, petName, especie, imgLink, birthdate){
+        this.tutor = tutor
+        this.petName = petName;
+        this.especie = especie;
+        this.imgLink = imgLink;
+        this.birthdate = birthdate;
+    }
+}
