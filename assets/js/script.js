@@ -1,4 +1,4 @@
-function verificarImputs(){
+function verificarInputs() {
     let tutor = document.getElementById('tutor').value
     let petName = document.getElementById('petName').value
     let especie = document.getElementById('especie').value
@@ -11,18 +11,18 @@ function verificarImputs(){
     console.log(imgLink);
     console.log(birthdate);
 
-    if(tutor == ""|| petName == ""|| especie == ""|| imgLink == ""|| birthdate == ""){
+    if (tutor == "" || petName == "" || especie == "" || imgLink == "" || birthdate == "") {
         console.log("inputs vazios");
         evieMsg("preencha todos os campos", "erro")
-    }else{
+    } else {
         console.log("inouts preenchidos")
         evieMsg("cadastro concluido com sucesso", "sucesso")
     }
 }
 
-function envieMsg(msg, tipoMsg){
+function envieMsg(msg, tipoMsg) {
     let msgDiv = document.getElementById('msg').value
-    let msgEnviar =  `
+    let msgEnviar = `
     <p class = "${tipoMsg}">${msg}</p>`;
     msgDiv.innerHTML = msgEnviar;
 
@@ -31,8 +31,8 @@ function envieMsg(msg, tipoMsg){
     }, 4000)
 }
 
-class Pet{
-    constructor( tutor, petName, especie, imgLink, birthdate){
+class Pet {
+    constructor(tutor, petName, especie, imgLink, birthdate) {
         this.tutor = tutor
         this.petName = petName;
         this.especie = especie;
@@ -40,17 +40,25 @@ class Pet{
         this.birthdate = birthdate;
     }
 }
-const petTest = new Pet("felipe","alvim", "shitzu", "link",);
+const petTest = new Pet("felipe", "alvim", "shitzu", "link",);
 console.log(petTest);
 
-class listaPets{
-    constructor(){
+class listaPets {
+    constructor() {
         this.listaPetsArray = [];
     }
-    adicionarPet(param){
-        if(verificarImputs() == false)
-        this.listaPetsArray.push(param);
-        
-    
+    adicionarPet(param) {
+        if (verificarInputs() == false)
+            this.listaPetsArray.push(param);
+
+            limparInputs();
+
     }
+}
+function limparInputs() {
+    tutor = document.getElementById('tutor').value = "";
+    petName = document.getElementById('petName').value = "";
+    especie = document.getElementById('especie').value = ""; 
+    imgLink = document.getElementById('imgLink').value = ""; 
+    birthdate = document.getElementById('birthdate').value = ""; 
 }
