@@ -47,6 +47,7 @@ class listaPets {
     constructor() {
         this.listaPetsArray = [];
     }
+
     adicionarPet(param) {
         if (verificarInputs() == false)
             this.listaPetsArray.push(param);
@@ -55,10 +56,31 @@ class listaPets {
 
     }
 }
+const bibliotecaPets = new listaPets();
+
 function limparInputs() {
     tutor = document.getElementById('tutor').value = "";
     petName = document.getElementById('petName').value = "";
     especie = document.getElementById('especie').value = ""; 
     imgLink = document.getElementById('imgLink').value = ""; 
     birthdate = document.getElementById('birthdate').value = ""; 
+}
+
+function renderizarConteudo(content){
+
+content = "";
+
+bibliotecaPets.listaPetsArray.forEach(pet => {
+    content += `
+    <div class="petCadastro">
+            <p>tutor:${pet.tutor}</p>
+            <p>nome do pet:${pet.petName}</p>
+            <p>especie:${pet.especie}</p>
+            <p>data de aniversário:${pet.birthdate}</p>
+            <img src="${pet.imgLink}" alt="${pet.petName}"/>
+        </div>
+    `;
+
+    document.getElementById("petList").innerHTML = content
+});
 }
