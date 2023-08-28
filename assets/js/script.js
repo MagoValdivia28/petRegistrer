@@ -40,3 +40,17 @@ class Pet{
         this.birthdate = birthdate;
     }
 }
+const petTest = new Pet("felipe","alvim", "shitzu", "link",);
+console.log(petTest);
+
+class listaPets{
+    constructor(){
+        this.listaPetsArray = [];
+    }
+    adicionarPet(param){
+        if(verificarImputs() == false)
+        this.listaPetsArray.push(param);
+        
+    
+    }
+}
